@@ -28,6 +28,7 @@ data:
         jqPathExpressions:
           - .metadata.annotations.template
           - '.webhooks[]?.clientConfig.caBundle'
+          - '.webhooks'
     cert-manager.io/Certificate:
       ignoreDifferences: |
         jqPathExpressions:

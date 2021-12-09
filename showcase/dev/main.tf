@@ -25,6 +25,11 @@ resource "azurerm_kubernetes_cluster" "k8scluster" {
   }
 }
 
+output "get_kubectl_command" {
+  value = "connect to the kubernetes cluster like this: az aks get-credentials --admin --name ${azurerm_kubernetes_cluster.k8scluster.name} --resource-group ${azurerm_resource_group.k8s.name}"
+}
+
+
 module "helm_crds" {
   source                        = "../../modules/helm/crds"
 }
@@ -48,11 +53,6 @@ data "kubernetes_service" "argocd"{
     namespace = "argocd"
   }
 }
-
-output "get_kubectl_command" {
-  value = "connect to the kubernetes cluster like this: az aks get-credentials --admin --name ${azurerm_kubernetes_cluster.k8scluster.name} --resource-group ${azurerm_resource_group.k8s.name}"
-}
-
 
 output "argocd_public_ip" {
   value = data.kubernetes_service.argocd.status

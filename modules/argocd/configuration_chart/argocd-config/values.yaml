@@ -4,11 +4,11 @@ deployment:
   sourceRepos:
     - 'https://github.com/iits-consulting/showcase-azure-gitops-infrastructure-charts.git'
 infrastructure:
-  name: "showcase-infrastructure-charts"
+  name: "showcase-azure-gitops-infrastructure-charts"
   repoUrl: 'https://github.com/iits-consulting/showcase-azure-gitops-infrastructure-charts.git'
-  path: stages/${STAGE}/showcase-infrastructure-charts
+  path: stages/${STAGE}/showcase-azure-gitops-infrastructure-charts
 githubToken:
-  name: "ARGO_CD_AZURE_SHOWCASE_DEPLOYMENT"
+  name: "ARGO_CD_AZURE_FRIDAYTALK_DEPLOYMENT"
   password: ${ARGOCD_GITHUB_ACCESS_TOKEN}
 configs:
   secret:
@@ -43,7 +43,7 @@ configs:
       #   -----BEGIN CERTIFICATE-----
       #   <cert data>
       #   -----END CERTIFICATE-----
-      #   -----BEGIN CERTIFICATE-----
+    #   -----BEGIN CERTIFICATE-----
     #   <ca cert data>
     #   -----END CERTIFICATE-----
 
