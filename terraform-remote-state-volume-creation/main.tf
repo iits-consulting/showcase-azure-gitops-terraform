@@ -17,8 +17,15 @@ resource "azurerm_storage_container" "container" {
   container_access_type = "private"
 }
 
-resource "azurerm_storage_blob" "state" {
-  name                   = "${var.context}-${var.stage}-tfstate"
+resource "azurerm_storage_blob" "infrastructure" {
+  name                   = "${var.context}-${var.stage}-infrastructure-tfstate"
+  storage_account_name   = azurerm_storage_account.account.name
+  storage_container_name = azurerm_storage_container.container.name
+  type                   = "Block"
+}
+
+resource "azurerm_storage_blob" "kubernetes" {
+  name                   = "${var.context}-${var.stage}-kubernetes-tfstate"
   storage_account_name   = azurerm_storage_account.account.name
   storage_container_name = azurerm_storage_container.container.name
   type                   = "Block"

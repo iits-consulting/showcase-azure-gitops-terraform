@@ -1,3 +1,0 @@
-export TF_VAR_ARM_SUBSCRIPTION_ID="REPLACE_ME"
-export TF_VAR_ARM_TENANT_ID="REPLACE_ME"
-export TF_VAR_github_access_token="REPLACE_ME"

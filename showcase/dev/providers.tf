@@ -1,5 +1,10 @@
 provider "azurerm" {
-  features {}
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy    = true
+      recover_soft_deleted_key_vaults = true
+    }
+  }
   subscription_id = var.ARM_SUBSCRIPTION_ID
   tenant_id       = var.ARM_TENANT_ID
 }

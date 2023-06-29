@@ -8,10 +8,6 @@ variable "context" {
   default = "showcase"
 }
 
-variable "github_access_token" {
-  sensitive = true
-}
-
 locals {
   tags = {
     Environment = var.stage
